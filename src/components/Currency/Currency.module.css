@@ -1,0 +1,242 @@
+.intro{
+    background: url("./../../assets/images/background.png") center no-repeat;
+    -webkit-background-size: cover;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+    z-index: 10;
+    opacity: 0.88;
+}
+
+.container{
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 30px 30px;
+    margin-top: 200px;
+    background-color: rgba(0,0,0,0.7);
+
+}
+
+.title{
+    font-size: 20px;
+    font-weight: bold;
+    text-align: start;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.date{
+    color: #FAB915;
+}
+
+
+.main_wrapper{
+    display: flex;
+}
+
+.table{
+    width: 75%;
+    overflow:hidden;
+    border:1px solid #d3d3d3;
+    background:#fefefe;
+    -moz-border-radius:5px; /* FF1+ */
+    -webkit-border-radius:5px; /* Saf3-4 */
+    border-radius: 0;
+    -moz-box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+    -webkit-box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+}
+
+.table_column_name{
+    padding: 13px 18px;
+    text-shadow: 1px 1px 1px #fff;
+    background:#e8eaeb;
+    color: #FAB915;
+    width: 33.33%;
+}
+
+.table_column_value{
+    border-top:1px solid #e0e0e0;
+    border-right:1px solid #e0e0e0;
+    padding: 10px 15px;
+    text-transform: capitalize;
+}
+
+.value{
+    font-weight: bold;
+
+}
+
+.table_line:hover{
+    background-color: #eee;
+}
+
+.pairs_wrapper{
+    width: 25%;
+    background-color: #e8eaeb;
+    padding: 13px 20px 20px 20px;
+    margin-left: 20px;
+    text-align: left;
+    position: relative;
+
+}
+
+.pairs_title{
+    text-align: center;
+    font-weight: bold;
+    color: #FAB915;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.inline_scroll{
+    display: inline-block;
+    width: 100%;
+}
+.pairs{
+    width: 100%;
+}
+.pairs_item{
+    display: flex;
+    background-color: #fefefe;
+    font-weight: bold;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+.pairs_item:last-child{
+    margin-bottom: 0;
+}
+
+.item_cur_name{
+    width: 50%;
+    border-right: 1px solid #e0e0e0;
+    padding: 15px;
+    text-align: center;
+}
+
+.item_cur_value{
+    width: 50%;
+    padding: 15px;
+    font-size: 14px;
+
+}
+
+.separator{
+    color: #FAB915;
+    font-size: 16px;
+}
+
+.add_button{
+    position: absolute;
+    bottom: 20px;
+    outline: none;
+    padding: 10px 0;
+    width: 50%;
+    border: none;
+    background-color: #FAB915;
+    text-transform: uppercase;
+    color: #fff;
+    margin-top: 20px;
+    cursor: pointer;
+    background-image: linear-gradient(45deg, #FFE29A 0%, #FAB915 50%, #8B670B 100%);
+    background-position: 100% 0;
+    background-size: 200% 200%;
+    box-shadow: 0 16px 32px 0 rgba(0,40,120,.35);
+    transition: .5s;
+}
+
+.add_button:hover{
+    box-shadow: 0 0 0 0 rgba(0,40,120,0);
+    background-position: 0 0;
+}
+
+.add_button_pressed{
+    position: absolute;
+    bottom: 20px;
+    outline: none;
+    padding: 10px 0;
+    width: 50%;
+    border: none;
+    background-color: #FAB915;
+    text-transform: uppercase;
+    color: #fff;
+    margin-top: 20px;
+    cursor: pointer;
+    background-image: linear-gradient(45deg, #FFE29A 0%, #FAB915 50%, #8B670B 100%);
+    box-shadow: 0 0 0 0 rgba(0,40,120,0);
+    background-position: 0 0;
+    background-size: 200% 200%;
+    transition: .5s;
+}
+
+
+.popup_add_pair{
+    position: absolute;
+    bottom: 70px;
+    width: 70%;
+    padding: 10px;
+    background-image: linear-gradient(45deg, rgba(107,151,255,0.8) 0%, rgba(44, 61, 107, 0.8) 50%, rgba(29, 34, 62, 0.8) 100%);
+    background-position: 100% 0;
+    background-size: 200% 200%;
+    border-radius: 9px 9px 9px 0;
+}
+
+.display_none{
+    display: none;
+}
+
+.add_pair_title{
+    font-size: 16px;
+    color: #ffffff;
+    font-weight: bold;
+    margin: 0;
+}
+
+.add_pair_form{
+    margin-top: 10px;
+
+}
+
+.form_selects{
+    display: flex;
+    justify-content: center;
+}
+
+.select{
+    font-weight: bold;
+    padding: 5px 8px;
+    width: 50%;
+    border: none;
+    outline: none;
+}
+.select:first-child{
+    margin-right: 5px;
+}
+.select:last-child{
+    margin-left: 5px;
+}
+
+.add_pair_accept_button{
+    outline: none;
+    padding: 5px 0;
+    width: 35%;
+    border: none;
+    background-color: #FAB915;
+    text-transform: uppercase;
+    color: #fff;
+    margin-top: 20px;
+    cursor: pointer;
+    background-image: linear-gradient(45deg, #FFE29A 0%, #FAB915 50%, #8B670B 100%);
+    background-position: 100% 0;
+    background-size: 200% 200%;
+    box-shadow: 0 16px 32px 0 rgba(0,40,120,.35);
+    transition: .5s;
+
+}
+
+.add_pair_accept_button:hover {
+    box-shadow: 0 0 0 0 rgba(0,40,120,0);
+    background-position: 0 0;
+}

@@ -1,0 +1,9 @@
+.preloader_wrapper{
+    width: 100%;
+    display: flex;
+    margin-top: 100px;
+}
+
+.preloader{
+    margin: 0 auto;
+}

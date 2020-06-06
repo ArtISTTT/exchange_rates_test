@@ -1,26 +1,53 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import {Route} from "react-router-dom"
+import {connect} from "react-redux";
+import {initializeApp} from "./redux/app-reducer";
+import Header from "./components/Header/Header";
+import CurrencyContainer from "./components/Currency/CurrencyContainer";
+import Preloader from "./components/common/Preloader/Preloader";
+import CalculatorContainer from "./components/Calculator/CalculatorContainer";
+import {setLocalStoragePairsData} from "./redux/currency-reducer";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+class App extends React.Component {
+
+  componentDidMount() {
+    this.props.initializeApp(this.props.currency)
+
+    if (JSON.parse(localStorage.getItem('pairsData')) === null) {
+      localStorage.setItem("pairsData", JSON.stringify(this.props.pairsData));
+    }
+  }
+
+  render() {
+    if (!this.props.initialized) {
+      return <Preloader />
+    }
+    return (
+
+        <div className="App">
+          <div className="container">
+            <div className="app-wrapper">
+              <Header/>
+              <div className="app-wrapper-content">
+                <Route path='/courses' render={() => <CurrencyContainer/>}/>
+                <Route path='/calculator' render={() => <CalculatorContainer/>}/>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+
+    );
+  }
 }
 
-export default App;
+const mapStateToProps = (state) => ({
+  initialized: state.app.initialized,
+  currency: state.currencyPage.currency,
+  pairsData: state.currencyPage.pairsData
+})
+
+export default connect(mapStateToProps, {initializeApp, setLocalStoragePairsData})(App)
