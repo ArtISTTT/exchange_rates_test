@@ -168,10 +168,6 @@
 
 }
 @media (max-width: 576px) {
-
-
-    /* Intro */
-
     .title{
         font-size: 16px;
         text-align: center;
@@ -180,15 +176,11 @@
     .part_title{
         font-size: 18px;
     }
-
-
-
 }
 
 @media (max-width: 450px) {
 
     /* Title*/
-
     .title{
         font-size: 13px;
     }
