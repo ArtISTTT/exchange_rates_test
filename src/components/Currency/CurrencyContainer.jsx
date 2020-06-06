@@ -34,7 +34,6 @@ class CurrencyContainer extends React.Component {
     addPair = (newPair) => {
         var _ = require('lodash');
         if (!~_.findIndex(this.props.pairsData, newPair) && newPair.FromCurrency !== newPair.ToCurrency) {
-            debugger
             if (this.props.pairsData.length === 0){
                 newPair["ID"] = 0
             } else {

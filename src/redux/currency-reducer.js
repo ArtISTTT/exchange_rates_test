@@ -13,7 +13,7 @@ let initialState = {
     CalculatedResult: null,
     isFetching: false,
     date: '',
-    currency: ['RUB', 'USD', 'EUR', 'JPY', 'GBP', 'MYR', 'PHP', 'BRL'],
+    currency: ['RUB', 'USD', 'EUR', 'JPY', 'GBP', 'MYR', 'PHP', 'BRL', 'CAD', 'SEK', 'KRW', 'PLN', 'NOK'],
     pairsData:[
         {"FromCurrency": "RUB", "ToCurrency": "USD", "ID": 1},
         {"FromCurrency": "RUB", "ToCurrency": "EUR", "ID": 2},

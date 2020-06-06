@@ -11,7 +11,9 @@ let CurrencyFlagComponent = (props) => <CurrencyFlag currency={props.currency} s
 let getCurrency = require("country-currency-map").getCurrency;
 
 
+
 const AddPairsForm = (props) => {
+
     return (
         <form className={classes.add_pair_form} onSubmit={props.handleSubmit}>
             <div className={classes.form_selects}>
@@ -93,9 +95,9 @@ let Currency = (props) => {
                                         )
                                     )}
                                 </table>
-                                <div className={classes.pairs_wrapper}>
-                                    <div className={classes.pairs_title}>Pairs</div>
-                                    <div className={classes.pairs_scroll}>
+                                <div id="pairsWrapper" className={classes.pairs_wrapper}>
+                                    <div id="pairsTitle" className={classes.pairs_title}>Pairs</div>
+                                    <div id="pairsScroll" className={classes.pairs_scroll}>
                                         {props.pairsData.map(pair => (
                                             <div key={pair.ID} className={classes.pairs_item}>
                                                 <div className={classes.item_cur_name}>{pair.FromCurrency}
@@ -112,16 +114,15 @@ let Currency = (props) => {
                                             </div>
                                         ))}
                                     </div>
-                                    <button onClick={props.doAddPairsOpened}
-                                            className={props.addPairsOpened ? classes.add_button_pressed : classes.add_button}>Add
-                                        custom pair
+                                    <button id="pairsButton" onClick={props.doAddPairsOpened}
+                                            className={props.addPairsOpened ? classes.add_button_pressed : classes.add_button}>Add custom pair
                                     </button>
-                                    <div
-                                        className={classes.popup_add_pair + " " + (props.addPairsOpened ? "" : classes.display_none)}>
+                                    <div className={classes.popup_add_pair + " " + (props.addPairsOpened ? "" : classes.display_none)}>
                                         <p className={classes.add_pair_title}>Choose custom pair</p>
                                         <AddPairsReduxForm onSubmit={onSubmit} currencyData={props.currencyData}/>
                                     </div>
                                 </div>
+
                             </div>
 
 
