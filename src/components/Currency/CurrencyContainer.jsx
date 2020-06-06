@@ -24,7 +24,6 @@ class CurrencyContainer extends React.Component {
 
 
     doAddPairsOpened = () =>{
-        console.log(this.props.addPairsOpened)
         if (this.props.addPairsOpened === true){
             this.props.setAddPairsOpened(false)
         } else {
@@ -35,6 +34,13 @@ class CurrencyContainer extends React.Component {
     addPair = (newPair) => {
         var _ = require('lodash');
         if (!~_.findIndex(this.props.pairsData, newPair) && newPair.FromCurrency !== newPair.ToCurrency) {
+            debugger
+            if (this.props.pairsData.length === 0){
+                newPair["ID"] = 0
+            } else {
+                newPair["ID"] = this.props.pairsData[this.props.pairsData.length-1].ID + 1
+
+            }
             this.props.setPair(newPair);
             this.props.setAddPairsOpened(false)
 

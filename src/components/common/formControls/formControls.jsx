@@ -16,7 +16,7 @@ export const AmountInput = ({input, meta, ...props}) => {
 
 export const ResultInput = ({input, meta,  ...props}, result) => {
     return (
-        <input {...input} {...props} placeholder={""} value={props.result} disabled={true} type="text" className={classes.input}/>
+        <input {...input} {...props} placeholder={""} value={props.result.toFixed(2)} disabled={true} type="text" className={classes.input}/>
     );
 }
 

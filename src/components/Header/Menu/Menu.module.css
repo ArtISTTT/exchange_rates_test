@@ -1,0 +1,35 @@
+/* MENU */
+
+.menu{
+    z-index: 101;
+    background-color: #2F4271;
+    position: absolute;
+    top: 76px;
+    width: 100%;
+    right: 0;
+    bottom: 0;
+    transition: right .2s linear;
+
+}
+
+.display_none{
+    display: none;
+}
+
+.brand{
+    text-align: center;
+}
+
+.nav{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.nav__link{
+    width: 100%;
+    padding: 7px 15px;
+    text-decoration: none;
+    color: #fff;
+}
+

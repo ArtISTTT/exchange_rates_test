@@ -1,13 +1,15 @@
 import React from 'react';
 import './App.css';
-import {Route} from "react-router-dom"
+import {NavLink, Route} from "react-router-dom"
 import {connect} from "react-redux";
 import {initializeApp} from "./redux/app-reducer";
-import Header from "./components/Header/Header";
 import CurrencyContainer from "./components/Currency/CurrencyContainer";
 import Preloader from "./components/common/Preloader/Preloader";
 import CalculatorContainer from "./components/Calculator/CalculatorContainer";
 import {setLocalStoragePairsData} from "./redux/currency-reducer";
+import HeaderContainer from "./components/Header/HeaderContainer";
+import {setBurgerStatus} from "./redux/header-reducer";
+import MenuContainer from "./components/Header/Menu/MenuContainer";
 
 
 class App extends React.Component {
@@ -29,7 +31,8 @@ class App extends React.Component {
         <div className="App">
           <div className="container">
             <div className="app-wrapper">
-              <Header/>
+              <HeaderContainer/>
+              <MenuContainer />
               <div className="app-wrapper-content">
                 <Route path='/courses' render={() => <CurrencyContainer/>}/>
                 <Route path='/calculator' render={() => <CalculatorContainer/>}/>
@@ -47,7 +50,8 @@ class App extends React.Component {
 const mapStateToProps = (state) => ({
   initialized: state.app.initialized,
   currency: state.currencyPage.currency,
-  pairsData: state.currencyPage.pairsData
+  pairsData: state.currencyPage.pairsData,
+  statusBurger: state.header.status
 })
 
-export default connect(mapStateToProps, {initializeApp, setLocalStoragePairsData})(App)
+export default connect(mapStateToProps, {initializeApp, setLocalStoragePairsData, setBurgerStatus})(App)
