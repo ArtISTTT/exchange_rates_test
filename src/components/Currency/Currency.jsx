@@ -24,7 +24,7 @@ const AddPairsForm = (props) => {
                     <option>Choose</option>
                     {Object.keys(props.currencyData).map((keyName, i) =>
                         (<option key={keyName} value={keyName}
-                                 className={classes.option}>{keyName}</option>)
+                                 className={classes.option}> {getSymbolFromCurrency(keyName)} {keyName}</option>)
                     )}
                 </Field>
                 <Field name={"ToCurrency"}
@@ -34,7 +34,7 @@ const AddPairsForm = (props) => {
                     <option>Choose</option>
                     {Object.keys(props.currencyData).map((keyName, i) =>
                         (<option key={keyName} value={keyName}
-                                 className={classes.option}>{keyName}</option>)
+                                 className={classes.option}> {getSymbolFromCurrency(keyName)} {keyName}</option>)
                     )}
                 </Field>
             </div>
