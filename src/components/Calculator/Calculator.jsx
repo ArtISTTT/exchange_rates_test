@@ -1,9 +1,8 @@
 import React from "react";
 import classes from "./Calculator.module.css";
 import Preloader from "../common/Preloader/Preloader";
-import {Field, reduxForm, formValueSelector} from "redux-form";
+import {Field, reduxForm} from "redux-form";
 import {AmountInput, ResultInput} from "../common/formControls/formControls";
-import {setCalculateResult} from "../../redux/calculator-reducer";
 import {requiredField} from "../../utils/validators/validators";
 
 

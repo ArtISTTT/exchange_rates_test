@@ -1,15 +1,11 @@
 import React from "react";
 import classes from "./Currency.module.css";
-/*import Preloader from "../common/preloader/Preloader";*/
-import {NavLink} from "react-router-dom";
 import Preloader from "../common/Preloader/Preloader";
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import CurrencyFlag from 'react-currency-flags';
 import {getAllCountriesByCurrencyOrSymbol} from "iso-country-currency";
 import getSymbolFromCurrency from 'currency-symbol-map'
 import {Field, reduxForm} from "redux-form";
 import {requiredField} from "../../utils/validators/validators";
-
 let CurrencyFlagComponent = (props) => <CurrencyFlag currency={props.currency} size="sm"/>;
 let getCurrency = require("country-currency-map").getCurrency;
 
@@ -91,19 +87,20 @@ let Currency = (props) => {
                                 </table>
                                 <div className={classes.pairs_wrapper}>
                                     <div className={classes.pairs_title}>Pairs</div>
-                                    <div className={classes.pairs}>
-                                        {props.pairsData.map(pair => (
-                                            <div className={classes.pairs_item}>
-                                                <div className={classes.item_cur_name}>{pair.FromCurrency}
-                                                    <span className={classes.separator}> / </span>
-                                                    {pair.ToCurrency}</div>
-                                                <div className={classes.item_cur_value}>
-                                                    {(props.currencyData[pair.FromCurrency]/props.currencyData[pair.ToCurrency]).toFixed(3)}
-                                                    <span className={classes.separator}> / </span>
-                                                    {(props.currencyData[pair.ToCurrency]/props.currencyData[pair.FromCurrency]).toFixed(3)}
+                                    <div className={classes.pairs_scroll}>
+                                            {props.pairsData.map(pair => (
+                                                <div key={pair.id} className={classes.pairs_item}>
+                                                    <div className={classes.item_cur_name}>{pair.FromCurrency}
+                                                        <span className={classes.separator}> / </span>
+                                                        {pair.ToCurrency}</div>
+                                                    <div className={classes.item_cur_value}>
+                                                        {(props.currencyData[pair.FromCurrency]/props.currencyData[pair.ToCurrency]).toFixed(3)}
+                                                        <span className={classes.separator}> / </span>
+                                                        {(props.currencyData[pair.ToCurrency]/props.currencyData[pair.FromCurrency]).toFixed(3)}
+                                                    </div>
+                                                    <button onClick={() => props.setDeletePair(pair.ID)} className={classes.button_delete_pair}>×</button>
                                                 </div>
-                                            </div>
-                                        ))}
+                                            ))}
                                     </div>
                                     <button onClick={props.doAddPairsOpened} className={props.addPairsOpened ? classes.add_button_pressed :classes.add_button}>Add custom pair</button>
                                     <div className={classes.popup_add_pair +" "+ (props.addPairsOpened ? "" : classes.display_none)}>

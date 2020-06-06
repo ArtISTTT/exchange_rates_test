@@ -6,6 +6,7 @@ const SET_PAIRS = 'SET_PAIRS'
 const SET_DATE = 'SET_DATE'
 const SET_ADD_PAIRS_OPENED = 'SET_ADD_PAIRS_OPENED'
 const SET_ALL_PAIRS_DATA = 'SET_ALL_PAIRS_DATA'
+const DELETE_PAIR = 'DELETE_PAIR'
 
 let initialState = {
     currencyData: {},
@@ -14,8 +15,8 @@ let initialState = {
     date: '',
     currency: ['RUB', 'USD', 'EUR', 'JPY', 'GBP', 'MYR', 'PHP', 'BRL'],
     pairsData:[
-        {"FromCurrency": "RUB", "ToCurrency": "USD"},
-        {"FromCurrency": "RUB", "ToCurrency": "EUR"},
+        {"FromCurrency": "RUB", "ToCurrency": "USD", "ID": 1},
+        {"FromCurrency": "RUB", "ToCurrency": "EUR", "ID": 2},
     ],
     addPairsOpened: false
 }
@@ -52,6 +53,11 @@ const currencyReducer = (state = initialState, action) => {
                 ...state,
                 pairsData: [...action.pairsData]
             }
+        case DELETE_PAIR:
+            return {
+                ...state,
+                pairsData: state.pairsData.filter((item) => item.ID !== action.ID)
+            }
         default:
             return state
     }
@@ -86,6 +92,11 @@ const setDate = (date) => ({
 export const setAddPairsOpened = (addPairsOpened) => ({
     type: SET_ADD_PAIRS_OPENED,
     addPairsOpened
+})
+
+export const setDeletePair = (ID) => ({
+    type: DELETE_PAIR,
+    ID
 })
 
 /* Thunks */

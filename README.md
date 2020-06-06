@@ -1,8 +1,6 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Available version
 
-## Available Scripts
-
-In the project directory, you can run:
+Available version 1.0.0
 
 ### `npm start`
 

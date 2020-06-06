@@ -2,7 +2,13 @@ import React from "react";
 import {connect} from "react-redux";
 import {compose} from "redux";
 import Currency from "./Currency";
-import {getPairsData, setAddPairsOpened, setLocalStoragePairsData, setPair} from "../../redux/currency-reducer";
+import {
+    getPairsData,
+    setAddPairsOpened,
+    setDeletePair,
+    setLocalStoragePairsData,
+    setPair
+} from "../../redux/currency-reducer";
 
 
 
@@ -16,6 +22,7 @@ class CurrencyContainer extends React.Component {
         localStorage.setItem("pairsData", JSON.stringify(this.props.pairsData));
     }
 
+
     doAddPairsOpened = () =>{
         console.log(this.props.addPairsOpened)
         if (this.props.addPairsOpened === true){
@@ -27,11 +34,13 @@ class CurrencyContainer extends React.Component {
 
     addPair = (newPair) => {
         var _ = require('lodash');
-        if (!~_.findIndex(this.props.pairsData, newPair) && newPair.FromCurrency != newPair.ToCurrency) {
+        if (!~_.findIndex(this.props.pairsData, newPair) && newPair.FromCurrency !== newPair.ToCurrency) {
             this.props.setPair(newPair);
+            this.props.setAddPairsOpened(false)
 
         }
     }
+
 
 
     render = () => {
@@ -57,4 +66,4 @@ let mapStateToProps = (state) => {
 }
 
 
-export default compose(connect(mapStateToProps, {getPairsData, setAddPairsOpened, setPair,setLocalStoragePairsData}))(CurrencyContainer)
+export default compose(connect(mapStateToProps, {getPairsData, setAddPairsOpened, setPair,setLocalStoragePairsData, setDeletePair}))(CurrencyContainer)
