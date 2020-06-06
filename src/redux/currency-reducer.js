@@ -114,7 +114,7 @@ export const getPairsData = (currency) => (dispatch) => {
             }
         }
         dispatch(setCurrencyData(result))
-        console.log(result)
+        /*console.log(result)*/
     })
 }
 

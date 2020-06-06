@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import {NavLink, Route} from "react-router-dom"
+import {Route} from "react-router-dom"
 import {connect} from "react-redux";
 import {initializeApp} from "./redux/app-reducer";
 import CurrencyContainer from "./components/Currency/CurrencyContainer";

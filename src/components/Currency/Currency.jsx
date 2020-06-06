@@ -6,6 +6,7 @@ import {getAllCountriesByCurrencyOrSymbol} from "iso-country-currency";
 import getSymbolFromCurrency from 'currency-symbol-map'
 import {Field, reduxForm} from "redux-form";
 import {requiredField} from "../../utils/validators/validators";
+
 let CurrencyFlagComponent = (props) => <CurrencyFlag currency={props.currency} size="sm"/>;
 let getCurrency = require("country-currency-map").getCurrency;
 
@@ -59,9 +60,11 @@ let Currency = (props) => {
                         ? <Preloader/>
                         : <div className={classes.container}>
                             <div className={classes.title}>Currency Information on <span
-                                className={classes.date}>{props.date}</span> (value for 1 EUR)</div>
+                                className={classes.date}>{props.date}</span> (value for 1 EUR)
+                            </div>
                             <div className={classes.main_wrapper}>
                                 <table cellSpacing="0" className={classes.table}>
+                                    <tbody>
                                     <tr>
                                         <th className={classes.table_column_name}>Code</th>
                                         <th className={classes.table_column_name}>Country</th>
@@ -69,11 +72,15 @@ let Currency = (props) => {
                                         <th className={classes.table_column_name}>Value</th>
 
                                     </tr>
+                                    </tbody>
+
 
                                     {Object.keys(props.currencyData).map((keyName, i) =>
                                         (
-                                            <tr className={classes.table_line} key={keyName}>
-                                                <td className={classes.table_column_value}>{keyName} <span className={classes.value}>{getSymbolFromCurrency(keyName)}</span></td>
+                                            <tbody key={keyName}>
+                                            <tr className={classes.table_line}>
+                                                <td className={classes.table_column_value}>{keyName} <span
+                                                    className={classes.value}>{getSymbolFromCurrency(keyName)}</span></td>
                                                 <td className={classes.table_column_value}><CurrencyFlagComponent
                                                     currency={keyName}/> {getAllCountriesByCurrencyOrSymbol('currency', keyName)[0]}
                                                 </td>
@@ -82,28 +89,36 @@ let Currency = (props) => {
                                                     props.currencyData[keyName].toFixed(2) :
                                                     "undefined"}</td>
                                             </tr>
+                                            </tbody>
+
                                         )
                                     )}
                                 </table>
                                 <div className={classes.pairs_wrapper}>
                                     <div className={classes.pairs_title}>Pairs</div>
                                     <div className={classes.pairs_scroll}>
-                                            {props.pairsData.map(pair => (
-                                                <div key={pair.id} className={classes.pairs_item}>
-                                                    <div className={classes.item_cur_name}>{pair.FromCurrency}
-                                                        <span className={classes.separator}> / </span>
-                                                        {pair.ToCurrency}</div>
-                                                    <div className={classes.item_cur_value}>
-                                                        {(props.currencyData[pair.FromCurrency]/props.currencyData[pair.ToCurrency]).toFixed(3)}
-                                                        <span className={classes.separator}> / </span>
-                                                        {(props.currencyData[pair.ToCurrency]/props.currencyData[pair.FromCurrency]).toFixed(3)}
-                                                    </div>
-                                                    <button onClick={() => props.setDeletePair(pair.ID)} className={classes.button_delete_pair}>×</button>
+                                        {props.pairsData.map(pair => (
+                                            <div key={pair.ID} className={classes.pairs_item}>
+                                                <div className={classes.item_cur_name}>{pair.FromCurrency}
+                                                    <span className={classes.separator}> / </span>
+                                                    {pair.ToCurrency}</div>
+                                                <div className={classes.item_cur_value}>
+                                                    {(props.currencyData[pair.FromCurrency] / props.currencyData[pair.ToCurrency]).toFixed(3)}
+                                                    <span className={classes.separator}> / </span>
+                                                    {(props.currencyData[pair.ToCurrency] / props.currencyData[pair.FromCurrency]).toFixed(3)}
                                                 </div>
-                                            ))}
+                                                <button onClick={() => props.setDeletePair(pair.ID)}
+                                                        className={classes.button_delete_pair}>×
+                                                </button>
+                                            </div>
+                                        ))}
                                     </div>
-                                    <button onClick={props.doAddPairsOpened} className={props.addPairsOpened ? classes.add_button_pressed :classes.add_button}>Add custom pair</button>
-                                    <div className={classes.popup_add_pair +" "+ (props.addPairsOpened ? "" : classes.display_none)}>
+                                    <button onClick={props.doAddPairsOpened}
+                                            className={props.addPairsOpened ? classes.add_button_pressed : classes.add_button}>Add
+                                        custom pair
+                                    </button>
+                                    <div
+                                        className={classes.popup_add_pair + " " + (props.addPairsOpened ? "" : classes.display_none)}>
                                         <p className={classes.add_pair_title}>Choose custom pair</p>
                                         <AddPairsReduxForm onSubmit={onSubmit} currencyData={props.currencyData}/>
                                     </div>
