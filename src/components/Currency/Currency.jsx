@@ -70,7 +70,6 @@ let Currency = (props) => {
                                         <th className={classes.table_column_name}>Country</th>
                                         <th className={classes.table_column_name}>Currency name</th>
                                         <th className={classes.table_column_name}>Value</th>
-
                                     </tr>
                                     </tbody>
 
@@ -81,10 +80,10 @@ let Currency = (props) => {
                                             <tr className={classes.table_line}>
                                                 <td className={classes.table_column_value}>{keyName} <span
                                                     className={classes.value}>{getSymbolFromCurrency(keyName)}</span></td>
-                                                <td className={classes.table_column_value}><CurrencyFlagComponent
+                                                <td className={classes.table_column_value + " " + classes.tal}><CurrencyFlagComponent
                                                     currency={keyName}/> {getAllCountriesByCurrencyOrSymbol('currency', keyName)[0]}
                                                 </td>
-                                                <td className={classes.table_column_value}>{getCurrency(keyName).name}</td>
+                                                <td className={classes.table_column_value + " " + classes.tal}>{getCurrency(keyName).name}</td>
                                                 <td className={classes.table_column_value + " " + classes.value}>{props.currencyData[keyName] ?
                                                     props.currencyData[keyName].toFixed(2) :
                                                     "undefined"}</td>
