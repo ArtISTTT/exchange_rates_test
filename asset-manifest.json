@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/exchange_rates_test/static/css/main.2eb324ee.chunk.css",
-    "main.js": "/exchange_rates_test/static/js/main.790ee7dc.chunk.js",
-    "main.js.map": "/exchange_rates_test/static/js/main.790ee7dc.chunk.js.map",
+    "main.js": "/exchange_rates_test/static/js/main.9c21ba1c.chunk.js",
+    "main.js.map": "/exchange_rates_test/static/js/main.9c21ba1c.chunk.js.map",
     "runtime-main.js": "/exchange_rates_test/static/js/runtime-main.44f69356.js",
     "runtime-main.js.map": "/exchange_rates_test/static/js/runtime-main.44f69356.js.map",
     "static/js/2.7016d483.chunk.js": "/exchange_rates_test/static/js/2.7016d483.chunk.js",
     "static/js/2.7016d483.chunk.js.map": "/exchange_rates_test/static/js/2.7016d483.chunk.js.map",
     "index.html": "/exchange_rates_test/index.html",
-    "precache-manifest.c32403c8bb6f45604f53508344cc5942.js": "/exchange_rates_test/precache-manifest.c32403c8bb6f45604f53508344cc5942.js",
+    "precache-manifest.2f180fb33a911ffc89e7ede3379b1908.js": "/exchange_rates_test/precache-manifest.2f180fb33a911ffc89e7ede3379b1908.js",
     "service-worker.js": "/exchange_rates_test/service-worker.js",
     "static/css/main.2eb324ee.chunk.css.map": "/exchange_rates_test/static/css/main.2eb324ee.chunk.css.map",
     "static/js/2.7016d483.chunk.js.LICENSE.txt": "/exchange_rates_test/static/js/2.7016d483.chunk.js.LICENSE.txt",
@@ -19,6 +19,6 @@
     "static/js/runtime-main.44f69356.js",
     "static/js/2.7016d483.chunk.js",
     "static/css/main.2eb324ee.chunk.css",
-    "static/js/main.790ee7dc.chunk.js"
+    "static/js/main.9c21ba1c.chunk.js"
   ]
 }
