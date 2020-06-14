@@ -7,7 +7,7 @@ export const AmountInput = ({input, meta, ...props}) => {
     const haveError = meta.error && meta.touched
     return (
         <div className={classes.wrapper}>
-            <input {...input} {...props} placeholder={"Amount"} type="number" className={classes.input} autoComplete="off"/>
+            <input {...input} {...props} placeholder={"Amount"} type="number" className={classes.input} autoComplete="off" />
             <p className={haveError ? classes.show_error : classes.hide_error}>Field is empty</p>
         </div>
 

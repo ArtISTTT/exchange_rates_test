@@ -4,6 +4,7 @@ import Preloader from "../common/Preloader/Preloader";
 import {Field, reduxForm} from "redux-form";
 import {AmountInput, ResultInput} from "../common/formControls/formControls";
 import {requiredField} from "../../utils/validators/validators";
+import handleSubmit from "redux-form/lib/handleSubmit";
 
 
 const CalculatorForm = (props) => {
@@ -15,7 +16,9 @@ const CalculatorForm = (props) => {
                 <Field component="select"
                        name={"availableType"}
                        className={classes.select}
-                       validate={[requiredField]}>
+                       validate={[requiredField]}
+
+                        >
 
                     <option>Choose</option>
                         {Object.keys(props.currencyData).map((keyName, i) =>
