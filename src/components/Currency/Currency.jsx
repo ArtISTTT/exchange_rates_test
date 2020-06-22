@@ -49,9 +49,30 @@ const AddPairsReduxForm = reduxForm({form: 'addPairs'})(AddPairsForm)
 
 let Currency = (props) => {
 
+    const [visiblePopup, setVisiblePopup] = React.useState(false)
+    const pairsRef = React.useRef()
+
     let onSubmit = (formData) => {
+        setVisiblePopup(false)
         props.addPair(formData)
     }
+
+    const handleOutsideClick = (e) => {
+        if(!e.path.includes(pairsRef.current)){
+            setVisiblePopup(false)
+        }
+    }
+
+    const toggleVisiblePopup = (e) => {
+        setVisiblePopup(!visiblePopup)
+    }
+
+    React.useEffect(() => {
+        document.body.addEventListener('click', handleOutsideClick)
+    }, [])
+
+
+
 
     return (
         <div className={classes.intro}>
@@ -114,13 +135,16 @@ let Currency = (props) => {
                                             </div>
                                         ))}
                                     </div>
-                                    <button id="pairsButton" onClick={props.doAddPairsOpened}
-                                            className={props.addPairsOpened ? classes.add_button_pressed : classes.add_button}>Add custom pair
-                                    </button>
-                                    <div className={classes.popup_add_pair + " " + (props.addPairsOpened ? "" : classes.display_none)}>
-                                        <p className={classes.add_pair_title}>Choose custom pair</p>
-                                        <AddPairsReduxForm onSubmit={onSubmit} currencyData={props.currencyData}/>
+                                    <div ref={pairsRef} className={classes.pairsPopup}>
+                                        <button id="pairsButton" onClick={toggleVisiblePopup}
+                                                className={props.addPairsOpened ? classes.add_button_pressed : classes.add_button}>Add custom pair
+                                        </button>
+                                        <div className={classes.popup_add_pair + " " + (visiblePopup ? "" : classes.display_none)}>
+                                            <p className={classes.add_pair_title}>Choose custom pair</p>
+                                            <AddPairsReduxForm onSubmit={onSubmit} currencyData={props.currencyData}/>
+                                        </div>
                                     </div>
+
                                 </div>
 
                             </div>

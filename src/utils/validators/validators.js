@@ -1,6 +1,5 @@
 export const requiredField = (value) => {
-    if (value) return undefined
-    return 'Field is required'
+    if (!value) return 'Field is required'
 
 }
 

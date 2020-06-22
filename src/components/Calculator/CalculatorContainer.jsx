@@ -5,20 +5,6 @@ import Calculator from "./Calculator";
 import {setCalculateResult} from "../../redux/calculator-reducer";
 
 
-
-class CalculatorContainer extends React.Component {
-
-
-
-    render = () => {
-        return (
-            <Calculator
-                {...this.props}
-            />
-        )
-    }
-}
-
 let mapStateToProps = (state) => {
     return {
         isFetching: state.currencyPage.isFetching,
@@ -28,4 +14,4 @@ let mapStateToProps = (state) => {
 }
 
 
-export default compose(connect(mapStateToProps, {setCalculateResult}))(CalculatorContainer)
+export default compose(connect(mapStateToProps, {setCalculateResult}))(Calculator)

@@ -3,13 +3,9 @@ import './App.css';
 import {Route, Switch, Redirect} from "react-router-dom"
 import {connect} from "react-redux";
 import {initializeApp} from "./redux/app-reducer";
-import CurrencyContainer from "./components/Currency/CurrencyContainer";
-import Preloader from "./components/common/Preloader/Preloader";
-import CalculatorContainer from "./components/Calculator/CalculatorContainer";
 import {setLocalStoragePairsData} from "./redux/currency-reducer";
-import HeaderContainer from "./components/Header/HeaderContainer";
 import {setBurgerStatus} from "./redux/header-reducer";
-import MenuContainer from "./components/Header/Menu/MenuContainer";
+import {MenuContainer, HeaderContainer, CalculatorContainer, CurrencyContainer, Preloader} from "./components";
 
 
 class App extends React.Component {

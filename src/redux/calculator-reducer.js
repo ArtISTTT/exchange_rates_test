@@ -2,7 +2,6 @@ const SET_CALCULATE_RESULT = 'SET_CALCULATE_RESULT'
 
 let initialState = {
     result: 100
-
 }
 
 const calculatorReducer = (state = initialState, action) => {
@@ -22,5 +21,7 @@ export const setCalculateResult = (result) => ({
     type: SET_CALCULATE_RESULT,
     result
 })
+
+
 
 export default calculatorReducer

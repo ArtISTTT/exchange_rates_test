@@ -17,8 +17,7 @@ let initialState = {
     pairsData:[
         {"FromCurrency": "RUB", "ToCurrency": "USD", "ID": 1},
         {"FromCurrency": "RUB", "ToCurrency": "EUR", "ID": 2},
-    ],
-    addPairsOpened: false
+    ]
 }
 
 const currencyReducer = (state = initialState, action) => {
@@ -42,11 +41,6 @@ const currencyReducer = (state = initialState, action) => {
             return {
                 ...state,
                 date: action.date
-            }
-        case SET_ADD_PAIRS_OPENED:
-            return {
-                ...state,
-                addPairsOpened: action.addPairsOpened
             }
         case SET_ALL_PAIRS_DATA:
             return {
@@ -87,11 +81,6 @@ const toggleIsFetching = (isFetching) => ({
 const setDate = (date) => ({
     type: SET_DATE,
     date
-})
-
-export const setAddPairsOpened = (addPairsOpened) => ({
-    type: SET_ADD_PAIRS_OPENED,
-    addPairsOpened
 })
 
 export const setDeletePair = (ID) => ({

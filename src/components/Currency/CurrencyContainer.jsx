@@ -4,7 +4,6 @@ import {compose} from "redux";
 import Currency from "./Currency";
 import {
     getPairsData,
-    setAddPairsOpened,
     setDeletePair,
     setLocalStoragePairsData,
     setPair
@@ -20,15 +19,6 @@ class CurrencyContainer extends React.Component {
 
     componentDidUpdate(prevProps, prevState, snapshot) {
         localStorage.setItem("pairsData", JSON.stringify(this.props.pairsData));
-    }
-
-
-    doAddPairsOpened = () =>{
-        if (this.props.addPairsOpened === true){
-            this.props.setAddPairsOpened(false)
-        } else {
-            this.props.setAddPairsOpened(true)
-        }
     }
 
     addPair = (newPair) => {
@@ -52,7 +42,6 @@ class CurrencyContainer extends React.Component {
         return (
             <Currency
                 {...this.props}
-                doAddPairsOpened={this.doAddPairsOpened}
                 addPair={this.addPair}
             />
         )
@@ -71,4 +60,4 @@ let mapStateToProps = (state) => {
 }
 
 
-export default compose(connect(mapStateToProps, {getPairsData, setAddPairsOpened, setPair,setLocalStoragePairsData, setDeletePair}))(CurrencyContainer)
+export default compose(connect(mapStateToProps, {getPairsData, setPair,setLocalStoragePairsData, setDeletePair}))(CurrencyContainer)
