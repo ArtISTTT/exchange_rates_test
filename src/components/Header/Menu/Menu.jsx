@@ -1,7 +1,6 @@
 import React from "react";
 import classes from './Menu.module.css'
 import {NavLink} from "react-router-dom";
-import {setBurgerStatus} from "../../../redux/header-reducer";
 
 const Menu = (props) => {
     if (props.status){

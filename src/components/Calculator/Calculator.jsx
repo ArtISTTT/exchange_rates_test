@@ -4,7 +4,6 @@ import Preloader from "../common/Preloader/Preloader";
 import {Field, reduxForm} from "redux-form";
 import {AmountInput, ResultInput} from "../common/formControls/formControls";
 import {requiredField} from "../../utils/validators/validators";
-import handleSubmit from "redux-form/lib/handleSubmit";
 
 
 const CalculatorForm = (props) => {
