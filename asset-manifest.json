@@ -1,24 +1,24 @@
 {
   "files": {
-    "main.css": "/exchange_rates_test/static/css/main.2eb324ee.chunk.css",
-    "main.js": "/exchange_rates_test/static/js/main.92ab6762.chunk.js",
-    "main.js.map": "/exchange_rates_test/static/js/main.92ab6762.chunk.js.map",
+    "main.css": "/exchange_rates_test/static/css/main.1c38694e.chunk.css",
+    "main.js": "/exchange_rates_test/static/js/main.36b2d96e.chunk.js",
+    "main.js.map": "/exchange_rates_test/static/js/main.36b2d96e.chunk.js.map",
     "runtime-main.js": "/exchange_rates_test/static/js/runtime-main.44f69356.js",
     "runtime-main.js.map": "/exchange_rates_test/static/js/runtime-main.44f69356.js.map",
-    "static/js/2.aae1ff7c.chunk.js": "/exchange_rates_test/static/js/2.aae1ff7c.chunk.js",
-    "static/js/2.aae1ff7c.chunk.js.map": "/exchange_rates_test/static/js/2.aae1ff7c.chunk.js.map",
+    "static/js/2.876dc894.chunk.js": "/exchange_rates_test/static/js/2.876dc894.chunk.js",
+    "static/js/2.876dc894.chunk.js.map": "/exchange_rates_test/static/js/2.876dc894.chunk.js.map",
     "index.html": "/exchange_rates_test/index.html",
-    "precache-manifest.94b4e51c6be5e0518db16110c9cbb344.js": "/exchange_rates_test/precache-manifest.94b4e51c6be5e0518db16110c9cbb344.js",
+    "precache-manifest.2fc39c225e7ec73970a0f72ca8d7f06c.js": "/exchange_rates_test/precache-manifest.2fc39c225e7ec73970a0f72ca8d7f06c.js",
     "service-worker.js": "/exchange_rates_test/service-worker.js",
-    "static/css/main.2eb324ee.chunk.css.map": "/exchange_rates_test/static/css/main.2eb324ee.chunk.css.map",
-    "static/js/2.aae1ff7c.chunk.js.LICENSE.txt": "/exchange_rates_test/static/js/2.aae1ff7c.chunk.js.LICENSE.txt",
+    "static/css/main.1c38694e.chunk.css.map": "/exchange_rates_test/static/css/main.1c38694e.chunk.css.map",
+    "static/js/2.876dc894.chunk.js.LICENSE.txt": "/exchange_rates_test/static/js/2.876dc894.chunk.js.LICENSE.txt",
     "static/media/Calculator.module.css": "/exchange_rates_test/static/media/background.ee75e1e9.png",
     "static/media/preloader_2.svg": "/exchange_rates_test/static/media/preloader_2.215d13f9.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.44f69356.js",
-    "static/js/2.aae1ff7c.chunk.js",
-    "static/css/main.2eb324ee.chunk.css",
-    "static/js/main.92ab6762.chunk.js"
+    "static/js/2.876dc894.chunk.js",
+    "static/css/main.1c38694e.chunk.css",
+    "static/js/main.36b2d96e.chunk.js"
   ]
 }

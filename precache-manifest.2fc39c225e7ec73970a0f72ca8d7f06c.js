@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "fa2fb2c155bc4027a82b2f882e10d853",
+    "revision": "ddddb1f3addad73a4501965bf432befc",
     "url": "/exchange_rates_test/index.html"
   },
   {
-    "revision": "c4551f9b7d32d70c9a09",
-    "url": "/exchange_rates_test/static/css/main.2eb324ee.chunk.css"
+    "revision": "b8637cea89cd46802e27",
+    "url": "/exchange_rates_test/static/css/main.1c38694e.chunk.css"
   },
   {
-    "revision": "b42704a74b00ed16251f",
-    "url": "/exchange_rates_test/static/js/2.aae1ff7c.chunk.js"
+    "revision": "a696beccb54975c4faf1",
+    "url": "/exchange_rates_test/static/js/2.876dc894.chunk.js"
   },
   {
     "revision": "64bea2e190f27355a76963b8cb94bb7b",
-    "url": "/exchange_rates_test/static/js/2.aae1ff7c.chunk.js.LICENSE.txt"
+    "url": "/exchange_rates_test/static/js/2.876dc894.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "c4551f9b7d32d70c9a09",
-    "url": "/exchange_rates_test/static/js/main.92ab6762.chunk.js"
+    "revision": "b8637cea89cd46802e27",
+    "url": "/exchange_rates_test/static/js/main.36b2d96e.chunk.js"
   },
   {
     "revision": "3a540d8f84385b2f8bdd",
