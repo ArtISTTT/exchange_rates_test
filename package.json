@@ -17,7 +17,7 @@
     "formik": "^2.1.4",
     "install": "^0.13.0",
     "iso-country-currency": "^0.5.1",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.21",
     "npm": "^6.14.5",
     "react": "^16.13.1",
     "react-currency-flags": "^0.1.2",
